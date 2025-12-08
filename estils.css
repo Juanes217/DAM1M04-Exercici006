@@ -1,0 +1,143 @@
+/* ESTILS GENERALS */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #f3f3f7;
+  color: #333;
+}
+
+/* CONTENIDOR PRINCIPAL */
+.contenidor {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/*FORMULARI*/
+.formulari {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  padding: 0.6rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Focus animat */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #4db8ff;
+  box-shadow: 0 0 6px rgba(77,184,255,0.7);
+  outline: none;
+}
+
+/* Valid i invalid */
+input:valid {
+  border-color: #4caf50;
+}
+input:invalid:focus {
+  border-color: #e53935;
+}
+
+/* Required */
+input:required {
+  background-color: #fafafa;
+}
+
+/* INPUT COLOR */
+input[type="color"] {
+  padding: 0;
+  width: 60px;
+  height: 40px;
+  border: none;
+}
+
+/* RANGE */
+input[type="range"] {
+  width: 100%;
+}
+
+/* CHECKBOX I RADIO PERSONALITZATS */
+.bloc label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4db8ff;
+  cursor: pointer;
+}
+
+/*  SELECT */
+select {
+  cursor: pointer;
+}
+select:hover {
+  border-color: #4db8ff;
+}
+
+/* TEXTAREA*/
+textarea {
+  resize: vertical;
+}
+
+/*BOTONS */
+.botons {
+  display: flex;
+  gap: 1rem;
+}
+button {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  background: #4db8ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #1a9be6;
+}
+button[type="reset"] {
+  background: #888;
+}
+button[type="reset"]:hover {
+  background: #666;
+}
+
+/* RESPONSIVITAT */
+@media (max-width: 600px) {
+  .contenidor {
+    padding: 1.2rem;
+  }
+  button {
+    width: 100%;
+  }
+  .botons {
+    flex-direction: column;
+  }
+}
