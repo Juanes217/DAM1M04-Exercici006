@@ -1,298 +1,359 @@
-/* estils generals */
+/* Variables per canviar colors fàcilment */
+:root {
+  --primari: #6366f1;
+  --primari-hover: #4f46e5;
+  --fons: #f8fafc;
+  --text: #1e293b;
+  --blanc: #ffffff;
+  --borda: #e2e8f0;
+}
+
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
 }
+
 body {
   margin: 0;
-  padding: 0;
-  background: #f3f3f7;
-  color: #333;
+  background-color: var(--fons);
+  color: var(--text);
 }
 
-/* vavbar*/
-.navbar {
-display: flex;
-gap: 1rem;
-padding: 1rem;
-background: #222;
-}
-.navbar a {
-color: #fff;
-text-decoration: none;
-transition: 0.3s;
-}
-.navbar a:hover {
-color: #4db8ff;
+/* Navbar Diferent */
+.header-principal {
+  background: var(--blanc);
+  border-bottom: 1px solid var(--borda);
+  padding: 1rem 2rem;
 }
 
-/* CONTENIDOR PRINCIPAL */
-.contenidor {
-  max-width: 700px;
-  margin: 2rem auto;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
-/*FORMULARI*/
-.formulari {
+.nav-links a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.nav-links a.actiu {
+  background: #eef2ff;
+  color: var(--primari);
+}
+
+/* Contenidor tipus Targeta */
+.wrapper {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  background: var(--blanc);
+  max-width: 800px;
+  width: 100%;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-header h1 { margin: 0; color: var(--primari); }
+.form-header p { color: #64748b; margin-top: 0.5rem; }
+
+/* Layout del Formulari */
+.grid-form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 2rem;
 }
 
-label {
+fieldset {
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+legend {
   font-weight: bold;
+  padding: 0 0.5rem;
+  color: var(--primari);
 }
 
-input,
+.camp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.fila-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Inputs Estilitzats */
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
 select,
 textarea {
-  padding: 0.6rem;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  transition: border 0.3s, box-shadow 0.3s;
+  padding: 0.75rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #fcfcfd;
+  font-size: 1rem;
 }
 
-/* Focus animat */
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #4db8ff;
-  box-shadow: 0 0 6px rgba(77,184,255,0.7);
+input:focus {
   outline: none;
+  border-color: var(--primari);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
 }
 
-/* Valid i invalid */
-input:valid {
-  border-color: #4caf50;
-}
-input:invalid:focus {
-  border-color: #e53935;
-}
-
-/* Required */
-input:required {
-  background-color: #fafafa;
+/* Opcions (Checkbox/Radio) */
+.opcions-grup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-/* INPUT COLOR */
-input[type="color"] {
-  padding: 0;
-  width: 60px;
-  height: 40px;
-  border: none;
+.titol-menor {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #94a3b8;
 }
 
-/* RANGE */
-input[type="range"] {
-  width: 100%;
-}
-
-/* CHECKBOX I RADIO PERSONALITZATS */
-.bloc label {
+.bloc-opcions label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-weight: normal;
+  margin-bottom: 0.4rem;
   cursor: pointer;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #4db8ff;
-  cursor: pointer;
-}
-
-/*  SELECT */
-select {
-  cursor: pointer;
-}
-select:hover {
-  border-color: #4db8ff;
-}
-
-/* TEXTAREA*/
-textarea {
-  resize: vertical;
-}
-
-/*BOTONS */
-.botons {
+/* Botons */
+.accions {
   display: flex;
+  justify-content: flex-end;
   gap: 1rem;
+  border-top: 1px solid var(--borda);
+  padding-top: 1.5rem;
 }
+
 button {
-  padding: 0.7rem 1.4rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
   border: none;
-  border-radius: 6px;
-  background: #4db8ff;
+}
+
+.btn-primari {
+  background: var(--primari);
   color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-button:hover {
-  background: #1a9be6;
-}
-button[type="reset"] {
-  background: #888;
-}
-button[type="reset"]:hover {
-  background: #666;
 }
 
-/* RESPONSIVITAT */
-@media (max-width: 600px) {
-  .contenidor {
-    padding: 1.2rem;
+.btn-primari:hover {
+  background: var(--primari-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secundari {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* Responsivitat */
+@media (max-width: 650px) {
+  .fila-doble, .opcions-grup {
+    grid-template-columns: 1fr;
   }
-  button {
-    width: 100%;
-  }
-  .botons {
-    flex-direction: column;
+  .accions {
+    flex-direction: column-reverse;
   }
 }
 
 
-
-/* opcion 1 — toggle  */
-
-.toggle-ocult {
-  display: none;
+.input-logic {
+    display: none; /* Amaga els inputs de control */
 }
 
-.btn-toggle {
-  display: none;
-  background: #4db8ff;
-  padding: 0.7rem 1rem;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  transition: 0.3s;
-}
-.btn-toggle:hover {
-  background: #1a9be6;
+.seccio-interactiva {
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--borda);
 }
 
-.menu-mobil {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex; 
-  gap: 1rem;
-  position: sticky;
-  top: 10px;
-}
-.menu-mobil li a {
-  background: #eee;
-  padding: 0.7rem 1rem;
-  border-radius: 6px;
-  display: block;
-  transition: 0.3s;
-}
-.menu-mobil li a:hover {
-  background: #ddd;
+.titol-seccio {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
 }
 
-/* MÒBIL — menú ocult per defecte */
-@media (max-width: 700px) {
-  .btn-toggle {
-    display: inline-block;
-  }
-
-  /* Mòbil: menú tancat per defecte */
-  .menu-mobil {
-    display: none;
-    flex-direction: column;
+/* --- ESTILS MENÚ --- */
+.btn-interactiu {
+    display: inline-flex;
+    align-items: center;
     gap: 0.5rem;
-  }
+    background: var(--primari);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
 
-  /* Mostrar menú quan checkbox està checked */
-  #toggle-menu:checked ~ .menu-mobil {
+.menu-desplegable {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
     display: flex;
-  }
+    gap: 0.5rem;
 }
 
+.menu-desplegable li a {
+    text-decoration: none;
+    color: var(--text);
+    background: #f1f5f9;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    display: block;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.menu-desplegable li a:hover {
+    background: #e2e8f0;
+}
+
+/* Responsive Menú */
 @media (max-width: 700px) {
-  .navbar {
-    position: sticky;
-    top: 0;
-  }
+    .menu-desplegable {
+        display: none;
+        flex-direction: column;
+    }
+    #toggle-menu:checked ~ .menu-desplegable {
+        display: flex;
+    }
 }
 
-/* opcion 2 — tabs */
-.tab-ocult {
-  display: none;
+/* --- ESTILS PESTANYES --- */
+.tabs-header {
+    display: flex;
+    gap: 5px;
+    background: #f1f5f9;
+    padding: 5px;
+    border-radius: 10px;
 }
-.tab-btn {
-  display: inline-block;
-  padding: 0.6rem 1rem;
-  margin-right: 0.5rem;
-  background: #ddd;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
+
+.tab-label {
+    flex: 1;
+    text-align: center;
+    padding: 0.7rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #64748b;
+    transition: 0.3s;
 }
-.tab-btn:hover {
-  background: #ccc;
+
+#tab1:checked ~ .tabs-header label[for="tab1"],
+#tab2:checked ~ .tabs-header label[for="tab2"],
+#tab3:checked ~ .tabs-header label[for="tab3"] {
+    background: var(--blanc);
+    color: var(--primari);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
+
+.tabs-body {
+    margin-top: 1rem;
+    min-height: 100px;
+}
+
 .content {
-  display: none;
-  padding: 1rem;
-  margin-top: 1rem;
-  background: #fafafa;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-}
-#pagina-interaccio:has(#tab1:checked) .content-1 { display: block; }
-#pagina-interaccio:has(#tab2:checked) .content-2 { display: block; }
-#pagina-interaccio:has(#tab3:checked) .content-3 { display: block; }
-
-/* opcion 3 — flip card */
-.flip-container {
-  perspective: 1000px;
-  width: 200px;
-  margin-top: 1.5rem;
+    display: none;
+    padding: 1rem;
+    animation: fadeIn 0.4s ease;
 }
 
-.flip-ocult {
-  display: none;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#pagina-interaccio:has(#tab1:checked) .content-1,
+#pagina-interaccio:has(#tab2:checked) .content-2,
+#pagina-interaccio:has(#tab3:checked) .content-3 {
+    display: block;
+}
+
+/* --- ESTILS FLIP CARD --- */
+.flip-wrapper {
+    perspective: 1200px;
+    width: 260px;
 }
 
 .flip-card {
-  width: 100%;
-  height: 130px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
+    width: 100%;
+    height: 160px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cara {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #4db8ff;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;     
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.davant {
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    color: white;
 }
 
 .darrera {
-  background: #1a9be6;
-  transform: rotateY(180deg);
+    background: #1e293b;
+    color: #818cf8;
+    transform: rotateY(180deg);
+    border: 2px solid var(--primari);
 }
 
 #flip-card:checked ~ .flip-card {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }

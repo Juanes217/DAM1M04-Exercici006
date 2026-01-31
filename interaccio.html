@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactivitat</title>
-  <link rel="stylesheet" href="estils.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactivitat Avançada</title>
+    <link rel="stylesheet" href="estils.css" />
 </head>
-    <body id="pagina-interaccio">
+<body id="pagina-interaccio">
 
-        <header>
-            <nav class="navbar">
-            <a href="index.html">Formulari</a>
-            <a href="interaccio.html">Interactivitat</a>
-            </nav>
-        </header>
+    <header class="header-principal">
+        <nav class="nav-links">
+            <a href="index.html">Inici</a>
+            <a href="interaccio.html" class="actiu">Interactivitat</a>
+        </nav>
+    </header>
 
-        <main class="contenidor">
-            <h1>Interactivitat amb CSS</h1>
+    <main class="wrapper">
+        <div class="form-card">
+            <div class="form-header">
+                <h1>Components Interactius</h1>
+                <p>Explora els elements dinàmics creats només amb CSS.</p>
+            </div>
 
-            <section>
-                <h2>Menú Responsive </h2>
+            <section class="seccio-interactiva">
+                <h2 class="titol-seccio">Menú Desplegable</h2>
+                <div class="menu-container">
+                    <input type="checkbox" id="toggle-menu" class="input-logic" />
+                    <label for="toggle-menu" class="btn-interactiu">
+                        <span class="icona">☰</span> Explora les opcions
+                    </label>
 
-                <input type="checkbox" id="toggle-menu" class="toggle-ocult" />
-                <label for="toggle-menu" class="btn-toggle">☰ Menú</label>
-
-                <ul class="menu-mobil">
-                    <li><a href="#">Opció 1</a></li>
-                    <li><a href="#">Opció 2</a></li>
-                    <li><a href="#">Opció 3</a></li>
-                </ul>
-            </section>
-
-
-            <section>
-                <h2>Pestanyes CSS</h2>
-
-                <input type="radio" name="tabs" id="tab1" class="tab-ocult" checked />
-                <label for="tab1" class="tab-btn">Pestanya 1</label>
-
-                <input type="radio" name="tabs" id="tab2" class="tab-ocult" />
-                <label for="tab2" class="tab-btn">Pestanya 2</label>
-
-                <input type="radio" name="tabs" id="tab3" class="tab-ocult" />
-                <label for="tab3" class="tab-btn">Pestanya 3</label>
-
-                <div class="content content-1">
-                    <p>Això és el contingut de la pestanya 1.</p>
-                </div>
-                <div class="content content-2">
-                    <p>Això és el contingut de la pestanya 2.</p>
-                </div>
-                <div class="content content-3">
-                    <p>Això és el contingut de la pestanya 3.</p>
+                    <ul class="menu-desplegable">
+                        <li><a href="#">Serveis Digitals</a></li>
+                        <li><a href="#">Projectes Recents</a></li>
+                        <li><a href="#">Contacte Directe</a></li>
+                    </ul>
                 </div>
             </section>
 
+            <section class="seccio-interactiva">
+                <h2 class="titol-seccio">Gestió de Continguts</h2>
+                <div class="tabs-wrapper">
+                    <input type="radio" name="tabs" id="tab1" class="input-logic" checked />
+                    <input type="radio" name="tabs" id="tab2" class="input-logic" />
+                    <input type="radio" name="tabs" id="tab3" class="input-logic" />
 
-            <section>
-                <h2>Flip Card </h2>
-                <div class="flip-container">
-                    <input type="checkbox" id="flip-card" class="flip-ocult" />
-                    <div class="flip-card">
-                        <label for="flip-card" class="cara davant">Davant</label>
-                        <label for="flip-card" class="cara darrera">Darrera</label>
+                    <div class="tabs-header">
+                        <label for="tab1" class="tab-label">Descripció</label>
+                        <label for="tab2" class="tab-label">Detalls</label>
+                        <label for="tab3" class="tab-label">Ajuda</label>
+                    </div>
+
+                    <div class="tabs-body">
+                        <div class="content content-1">
+                            <h3>Benvingut a la Pestanya 1</h3>
+                            <p>Aquest és un espai per a informació general d'usuari.</p>
+                        </div>
+                        <div class="content content-2">
+                            <h3>Benvingut a la Pestanya 2</h3>
+                            <p>Aquí pots veure els detalls més concrets.</p>
+                        </div>
+                        <div class="content content-3">
+                            <h3>Benvingut a la Pestanya 3</h3>
+                            <p>Si tens dubtes, contacta amb nosaltres.</p>
+                        </div>
                     </div>
                 </div>
             </section>
-        </main>
-    </body>
+
+            <section class="seccio-interactiva">
+                <h2 class="titol-seccio">Targeta Reversible</h2>
+                <div class="flip-wrapper">
+                    <input type="checkbox" id="flip-card" class="input-logic" />
+                    <div class="flip-card">
+                        <label for="flip-card" class="cara davant">
+                            <span>Fes clic per girar</span>
+                        </label>
+                        <label for="flip-card" class="cara darrera">
+                            <span>¡Sorpresa!</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
 </html>

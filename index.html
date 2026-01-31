@@ -1,104 +1,120 @@
 <!DOCTYPE html>
 <html lang="ca">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Index</title>
-        <link rel="stylesheet" href="estils.css" />
-    </head>
-    <body>
-        <header>
-            <nav class="navbar">
-            <a href="index.html">Formulari</a>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registre d'Usuari</title>
+    <link rel="stylesheet" href="estils.css" />
+</head>
+<body>
+    <header class="header-principal">
+        <nav class="nav-links">
+            <a href="index.html" class="actiu">Inici</a>
             <a href="interaccio.html">Interactivitat</a>
-            </nav>
-        </header>
-        
-        <main class="contenidor">
-            <h1>Formulari de registre</h1>
-
-            <form action="#" method="post" class="formulari">
-
-            <!-- Nom complet -->
-            <label for="nom">Nom complet</label>
-            <input 
-                type="text" 
-                id="nom" 
-                name="nom" 
-                required
-                pattern="^[A-Za-zÀ-ÿ]+( [A-Za-zÀ-ÿ]+)+$"
-                title="Escriu mínim un nom i un cognom" />
-
-            <!-- Correu electrònic -->
-            <label for="email">Correu electrònic</label>
-            <input type="email" id="email" name="email" required />
-
-            <!-- Telèfon -->
-            <label for="tel">Telèfon</label>
-            <input 
-                type="tel" 
-                id="tel" 
-                name="tel"
-                pattern="^[0-9]{9}$"
-                title="Introdueix un número de 9 dígits" />
-
-            <!-- Edat -->
-            <label for="edat">Edat</label>
-            <input type="number" id="edat" name="edat" min="1" max="120" step="1" />
-
-            <!-- Data de naixement -->
-            <label for="naix">Data de naixement</label>
-            <input type="date" id="naix" name="naix" />
-
-            <!-- Franja horària -->
-            <label for="hora">Franja horària</label>
-            <input type="time" id="hora" name="hora" />
-
-            <!-- Color preferit -->
-            <label for="color">Color preferit</label>
-            <input type="color" id="color" name="color" />
-
-            <!-- Control lliscant -->
-            <label for="rang">Valor (0–100)</label>
-            <input type="range" id="rang" name="rang" min="0" max="100" />
-
-            <!-- Aficions (checkbox) -->
-            <fieldset class="bloc">
-                <legend>Aficions</legend>
-                <label><input type="checkbox" name="aficions" value="musica" /> Música</label>
-                <label><input type="checkbox" name="aficions" value="esport" /> Esport</label>
-                <label><input type="checkbox" name="aficions" value="lectura" /> Lectura</label>
-            </fieldset>
-
-            <!-- Nivell d'estudis (radio) -->
-            <fieldset class="bloc">
-                <legend>Nivell d'estudis</legend>
-                <label><input type="radio" name="estudis" value="eso" required /> ESO</label>
-                <label><input type="radio" name="estudis" value="bat" /> Batxillerat</label>
-                <label><input type="radio" name="estudis" value="uni" /> Universitat</label>
-            </fieldset>
-
-            <!-- País -->
-            <label for="pais">País</label>
-            <select id="pais" name="pais">
-                <option value="">Selecciona...</option>
-                <option value="es">Espanya</option>
-                <option value="fr">França</option>
-                <option value="it">Itàlia</option>
-                <option value="pt">Portugal</option>
-            </select>
-
-            <!-- Comentaris -->
-            <label for="comentaris">Comentaris</label>
-            <textarea id="comentaris" name="comentaris" rows="4"></textarea>
-
-            <!-- Botons -->
-            <div class="botons">
-                <button type="submit">Enviar</button>
-                <button type="reset">Esborrar</button>
+        </nav>
+    </header>
+    
+    <main class="wrapper">
+        <section class="form-card">
+            <div class="form-header">
+                <h1>Alta d'Usuari</h1>
+                <p>Si us plau, omple les dades per completar el registre.</p>
             </div>
 
+            <form action="#" method="post" class="grid-form">
+                
+                <fieldset class="seccio-form">
+                    <legend>Informació Personal</legend>
+                    
+                    <div class="camp">
+                        <label for="nom">Nom i Cognoms</label>
+                        <input type="text" id="nom" name="nom" required 
+                               pattern="^[A-Za-zÀ-ÿ]+( [A-Za-zÀ-ÿ]+)+$" 
+                               placeholder="Ex: Joan Garcia">
+                    </div>
+
+                    <div class="fila-doble">
+                        <div class="camp">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="nom@exemple.com">
+                        </div>
+                        <div class="camp">
+                            <label for="tel">Telèfon</label>
+                            <input type="tel" id="tel" name="tel" pattern="^[0-9]{9}$" placeholder="600000000">
+                        </div>
+                    </div>
+
+                    <div class="fila-doble">
+                        <div class="camp">
+                            <label for="edat">Edat</label>
+                            <input type="number" id="edat" name="edat" min="1" max="120">
+                        </div>
+                        <div class="camp">
+                            <label for="naix">Data de naixement</label>
+                            <input type="date" id="naix" name="naix">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="seccio-form">
+                    <legend>Preferències i Altres</legend>
+                    
+                    <div class="fila-doble">
+                        <div class="camp">
+                            <label for="hora">Hora de contacte</label>
+                            <input type="time" id="hora" name="hora">
+                        </div>
+                        <div class="camp">
+                            <label for="color">Color corporatiu</label>
+                            <input type="color" id="color" name="color" value="#6366f1">
+                        </div>
+                    </div>
+
+                    <div class="camp">
+                        <label for="rang">Nivell de satisfacció (0–100)</label>
+                        <input type="range" id="rang" name="rang" min="0" max="100">
+                    </div>
+
+                    <div class="opcions-grup">
+                        <div class="bloc-opcions">
+                            <p class="titol-menor">Interessos</p>
+                            <label><input type="checkbox" name="aficions" value="musica"> Música</label>
+                            <label><input type="checkbox" name="aficions" value="esport"> Esport</label>
+                            <label><input type="checkbox" name="aficions" value="lectura"> Lectura</label>
+                        </div>
+
+                        <div class="bloc-opcions">
+                            <p class="titol-menor">Estudis</p>
+                            <label><input type="radio" name="estudis" value="eso" required> ESO</label>
+                            <label><input type="radio" name="estudis" value="bat"> Batxillerat</label>
+                            <label><input type="radio" name="estudis" value="uni"> Uni</label>
+                        </div>
+                    </div>
+
+                    <div class="camp">
+                        <label for="pais">País de residència</label>
+                        <select id="pais" name="pais">
+                            <option value="" disabled selected>Tria una opció...</option>
+                            <option value="es">Espanya</option>
+                            <option value="fr">França</option>
+                            <option value="it">Itàlia</option>
+                            <option value="pt">Portugal</option>
+                        </select>
+                    </div>
+
+                    <div class="camp">
+                        <label for="comentaris">Missatge adicional</label>
+                        <textarea id="comentaris" name="comentaris" rows="3"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="accions">
+                    <button type="reset" class="btn-secundari">Netejar</button>
+                    <button type="submit" class="btn-primari">Registrar-me</button>
+                </div>
+
             </form>
-        </main>
-    </body>
+        </section>
+    </main>
+</body>
 </html>
